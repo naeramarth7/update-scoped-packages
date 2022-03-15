@@ -1,0 +1,19 @@
+{
+  "name": "update-scoped-packages",
+  "version": "0.1.0",
+  "description": "Update all packages within a given scope (e.g. @nestjs).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naeramarth7/update-scoped-packages.git"
+  },
+  "author": "Sven Flickinger <hc4e2k@gmail.com>",
+  "license": "CC0-1.0",
+  "bugs": {
+    "url": "https://github.com/naeramarth7/update-scoped-packages/issues"
+  },
+  "homepage": "https://github.com/naeramarth7/update-scoped-packages#readme"
+}
