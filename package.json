@@ -1,7 +1,7 @@
 {
   "name": "update-scoped-packages",
   "version": "0.1.0",
-  "description": "Update all packages within a given scope (e.g. @nestjs).",
+  "description": "Update all packages within a given scope (e.g. @angular).",
   "main": "index.js",
   "bin": {
     "update-scoped-packages": "dist/index.js"
