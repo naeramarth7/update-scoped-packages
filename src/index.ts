@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { readFileSync } from "fs";
+import { readFileSync, existsSync } from "fs";
 import * as path from "path";
 import { execSync } from "child_process";
 
@@ -10,6 +10,8 @@ const packageJson = JSON.parse(readFileSync(packageJsonPath).toString("utf-8"));
 const scriptName = process.argv[1].split("/").reverse()[0];
 const scope = process.argv[2];
 const targetVersion = process.argv[3] || "latest";
+
+const installCmd = existsSync("./yarn.lock") ? "yarn add" : "npm install";
 
 const dependencies = [
   // Get distinct dependency names
@@ -29,6 +31,6 @@ console.log(
   `[${scriptName}] Updating dependencies: \n  * ${dependencies.join("\n  * ")}`
 );
 
-execSync(`npm install ${dependencies.join(" ")}`);
+execSync(`${installCmd} ${dependencies.join(" ")}`);
 
 console.log(`[${scriptName}] DONE\n`);
