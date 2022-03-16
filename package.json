@@ -1,6 +1,6 @@
 {
   "name": "update-scoped-packages",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Update all packages within a given scope (e.g. @angular).",
   "main": "index.js",
   "bin": {
