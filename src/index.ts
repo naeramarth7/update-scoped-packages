@@ -11,7 +11,16 @@ const scriptName = process.argv[1].split("/").reverse()[0];
 const scope = process.argv[2];
 const targetVersion = process.argv[3] || "latest";
 
-const installCmd = existsSync("./yarn.lock") ? "yarn add" : "npm install";
+const isPnpm = existsSync("./pnpm-lock.yaml");
+const isYarn = existsSync("./yarn.lock");
+
+const installCmd = () => {
+  switch (true) {
+    case isPnpm: return 'pnpm add';
+    case isYarn: return 'yarn add';
+    default: return 'npm install';
+  }
+};
 
 const dependencies = [
   // Get distinct dependency names
@@ -31,6 +40,6 @@ console.log(
   `[${scriptName}] Updating dependencies: \n  * ${dependencies.join("\n  * ")}`
 );
 
-execSync(`${installCmd} ${dependencies.join(" ")}`);
+execSync(`${installCmd()} ${dependencies.join(" ")}`);
 
 console.log(`[${scriptName}] DONE\n`);
