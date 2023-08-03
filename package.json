@@ -3,6 +3,9 @@
   "version": "0.3.0",
   "description": "Update all packages within a given scope (e.g. @angular).",
   "main": "index.js",
+  "engines": {
+    "node": ">=16"
+  },
   "bin": {
     "update-scoped-packages": "dist/index.js"
   },
